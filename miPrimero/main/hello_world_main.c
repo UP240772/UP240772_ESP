@@ -46,5 +46,3 @@ void app_main(void)
         sos();
     }
 }
-
-//Lalo gei 2
