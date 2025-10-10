@@ -7,7 +7,7 @@
 #define AIN1 GPIO_NUM_5
 #define AIN2 GPIO_NUM_17
 #define PWMA GPIO_NUM_16
-//
+
 esp_err_t configureGpio(void)
 {
     // Configure GPIO pins for input and output modes
