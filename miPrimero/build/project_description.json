@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "miPrimero",
-    "project_version":    "6eeef0f-dirty",
+    "project_version":    "287c014-dirty",
     "project_path":       "C:/Users/rodom/Desktop/UP240772_ESP/UP240772_ESP/miPrimero",
     "idf_path":           "C:/Users/rodom/esp/v5.4.2/esp-idf",
     "build_dir":          "C:/Users/rodom/Desktop/UP240772_ESP/UP240772_ESP/miPrimero/build",

@@ -4,8 +4,43 @@
 #include "freertos/FreeRTOS.h"
 
 // Definición de los pines para el LED y el botón
-#define LED    GPIO_NUM_2
-#define BUTTON GPIO_NUM_5
+#define LED    GPIO_NUM_23
+#define BUTTON GPIO_NUM_24
+
+
+void punto(void)
+{
+     gpio_set_level(LED, 1); // Encendemos el LED
+    vTaskDelay(pdMS_TO_TICKS(200)); // Esperamos 
+     gpio_set_level(LED, 0); // Apagamos el LED
+        vTaskDelay(pdMS_TO_TICKS(200)); // Esperamos 1 segundo
+}
+
+void raya(void)
+{
+    gpio_set_level(LED, 1); // Encendemos el LED
+    vTaskDelay(pdMS_TO_TICKS(500)); // Esperamos 
+     gpio_set_level(LED, 0); // Apagamos el LED
+        vTaskDelay(pdMS_TO_TICKS(500)); // Esperamos 1 segundo
+}
+
+void sos()
+{
+    printf("SOS\n");
+    for(int i=0; i<3; i++)
+    {
+        punto();
+    }
+    for(int i=0; i<3; i++)
+    {
+        raya();
+    }
+    for(int i=0; i<3; i++)
+    {
+        punto();
+    }  
+}
+
 
 void app_main(void)
 {
@@ -22,6 +57,7 @@ void app_main(void)
     gpio_set_direction(BUTTON, GPIO_MODE_INPUT);
 
     // Bucle principal
+
     while(true)
     {
         // Lee el estado del botón (0 si está presionado, 1 si no)
@@ -31,7 +67,7 @@ void app_main(void)
         // Si el botón está presionado (nivel bajo)
         if(status == false)
         {
-            gpio_set_level(LED, 1); // Enciende el LED
+          gpio_set_level(LED, 1); // Apaga el LED
         }
         else
         {
